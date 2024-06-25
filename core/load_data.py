@@ -25,11 +25,11 @@ def extract_offers(base_url):
             driver.get(url)
             try:
                 WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.XPATH, '//a[@class="sc-eZXMBi yCeAd"]')))
+                    EC.presence_of_element_located((By.XPATH, '//a[@class="sc-ccSCjj dlMgrl"]')))
             except TimeoutException:
                 print("No further elements were found, exiting the loop.")
                 break
-            elements = driver.find_elements(By.XPATH, '//a[@class="sc-eZXMBi yCeAd"]')
+            elements = driver.find_elements(By.XPATH, '//a[@class="sc-ccSCjj dlMgrl"]')
             for element in elements:
                 href_value = element.get_attribute("href")
                 driver.execute_script("arguments[0].scrollIntoView(true);", element)
